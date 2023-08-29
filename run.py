@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from AfricExplore.app import create_app, db
+from app import create_app, db
 
 app = create_app()
 

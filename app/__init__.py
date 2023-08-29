@@ -26,11 +26,11 @@ def create_app():
     This is used to modularize and organize
     the codebase for destination related routes
     """
-    from .routes import auth as auth_blueprint
-    app.register_blueprint(auth_blueprint)
+    #from .routes import auth as auth_blueprint
+    #app.register_blueprint(auth_blueprint)
 
-    from .routes import destinations as destinations_blueprint
-    app.register_blueprint(destinations_blueprint)
+    from .routes import destinations
+    app.register_blueprint(destinations.bp)
 
     """return the flask application instance"""
     return app
