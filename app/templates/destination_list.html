@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>Destinations</h2>
+<ul>
+{% for destination in destinations %}
+    <li>{{ destination.name }}</li>
+{% endfor %}
+</ul>
+{% endblock %}
