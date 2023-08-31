@@ -1,10 +1,24 @@
-{% extends 'layout.html' %}
-
-{% block content %}
-<h2>Destinations</h2>
-<ul>
-{% for destination in destinations %}
-    <li>{{ destination.name }}</li>
-{% endfor %}
-</ul>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destination List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Destinations</h1>
+    <ul>
+        {% for destination in destinations %}
+        <li>
+            {{ destination.name }}
+            <ul>
+                {% for activity in destination.activities %}
+                <li>{{ activity }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

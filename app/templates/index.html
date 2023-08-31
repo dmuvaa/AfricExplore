@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfricExplore</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+{% include 'header.html' %}
+
+<!-- Navigation -->
+<nav>
+    <ul>
+        <li><a href="{{ url_for('destinations.index') }}">Home</a></li>
+        <li><a href="{{ url_for('destinations.list_destinations') }}">Find Destinations</a></li>
+        <li><a href="#book-your-stay">Book Your Stay</a></li>
+        <li><a href="#contact-us">Contact Us</a></li>
+        <li><a href="#activities">Activities</a></li>
+    </ul>
+</nav>
+
+<!-- Best Destinations in Africa -->
+<section>
+  <h1>Best Destinations in Africa</h1>
+  <div class="destination-grid">
+    {% for destination in destinations[:3] %}
+      <article class="destination-card">
+        <img src="{{ url_for('static', filename='images/' + (destination.name|replace(' ', '')).lower() + '.jpg') }}" alt="{{ destination.name }}">
+        <h2>{{ destination.name }}</h2>
+        <p>{{ destination.country }}</p>
+      </article>
+    {% endfor %}
+  </div>
+  <a href="{{ url_for('destinations.list_destinations') }}" class="view-more">View More Destinations</a>
+</section>
+
+<!-- Dropdown for Locations -->
+<section>
+  <h1>Find Your Destination</h1>
+  <select>
+    {% for destination in destinations %}
+      <option value="{{ destination.name }}">{{ destination.name }}</option>
+    {% endfor %}
+  </select>
+</section>
+
+<!-- Best Activities to Keep You Engaged -->
+<section id="activities">
+  <h1>Best Activities to Keep You Engaged</h1>
+  <!-- You can add content or structure similar to the destinations section here -->
+</section>
+
+<!-- Book Your Stay -->
+<section id="book-your-stay">
+  <h1>Book Your Stay</h1>
+  <!-- Your booking content here, perhaps a form or details about how to book -->
+</section>
+
+<!-- Contact Us -->
+<section id="contact-us">
+  <h1>Contact Us</h1>
+  <!-- Your contact information or form here -->
+</section>
+
+{% include 'footer.html' %}
+
+</body>
+</html>
+

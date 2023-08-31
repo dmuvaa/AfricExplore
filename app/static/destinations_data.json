@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Nairobi",
+        "activities": [
+            "Visit Nairobi National Park",
+            "Tour the Giraffe Centre",
+            "Explore the Maasai Market"
+        ]
+    },
+    {
+	"name": "Nakuru",
+	"activites": [
+	    "Visit Nakuru National Park",
+	    "Hike the Menengai Crater",
+	    "Visit the Lord Egerton Castle"
+	]
+    },
+    {
+        "name": "Naivasha",
+        "activities": [
+            "Tour the iconic Hell's Gate",
+            "Take a Boat Ride to Crescent Island",
+            "Swim at the Olkaria Geothermal Spa"
+        ]
+    },
+    {
+        "name": "Mombasa",
+        "activities": [
+            "Tour Diani",
+            "Visit the Old Town",
+            "Explore the Mama Ngina Waterfront"
+        ]
+    },
+    {
+        "name": "Cape Town",
+        "activities": [
+            "Hike up Table Mountain",
+            "Visit Robben Island",
+            "Explore the V&A Waterfront"
+        ]
+    },
+    {
+        "name": "Cairo",
+        "activities": [
+            "Visit the Pyramids of Giza",
+            "Explore the Egyptian Museum",
+            "Sail on the Nile"
+        ]
+    }
+]

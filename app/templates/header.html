@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AfricExplore</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('destinations.index') }}">Home</a></li>
+        <li><a href="{{ url_for('destinations.list_destinations') }}">Find Destinations</a></li>
+        <li><a href="#">Book Your Stay</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Activities</a></li>
+      </ul>
+    </nav>
+  </header>
