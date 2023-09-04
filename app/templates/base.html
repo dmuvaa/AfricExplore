@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfricExplore</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!-- You can include more stylesheets or scripts if needed -->
+</head>
+
+<body>
+
+    {% block content %}
+    <!-- Default content; this will be overridden by pages extending this template -->
+    {% endblock %}
+
+    <!-- Optional: Scripts section to include JavaScript files -->
+    {% block scripts %}
+    <!-- Default scripts; you can override this section in other templates if needed -->
+    {% endblock %}
+
+</body>
+
+</html>

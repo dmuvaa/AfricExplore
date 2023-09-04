@@ -1,25 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AfricExplore</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-</head>
-<body>
+{% extends "base.html" %}
 
+{% block content %}
+    
 {% include 'header.html' %}
-
-<!-- Navigation -->
-<nav>
-    <ul>
-        <li><a href="{{ url_for('destinations.index') }}">Home</a></li>
-        <li><a href="{{ url_for('destinations.list_destinations') }}">Find Destinations</a></li>
-        <li><a href="#book-your-stay">Book Your Stay</a></li>
-        <li><a href="#contact-us">Contact Us</a></li>
-        <li><a href="#activities">Activities</a></li>
-    </ul>
-</nav>
 
 <!-- Best Destinations in Africa -->
 <section>
@@ -55,7 +38,24 @@
 <!-- Book Your Stay -->
 <section id="book-your-stay">
   <h1>Book Your Stay</h1>
-  <!-- Your booking content here, perhaps a form or details about how to book -->
+  <form method="post">
+    {{ form.hidden_tag() }}
+    <div>
+      {{ form.city.label }} {{ form.city() }}
+    </div>
+    <div>
+      {{ form.start_date.label }} {{ form.start_date() }}
+    </div>
+    <div>
+      {{ form.end_date.label }} {{ form.end_date() }}
+    </div>
+    <div>
+      {{ form.guests.label }} {{ form.guests() }}
+    </div>
+    <div>
+      {{ form.submit() }}
+    </div>
+  </form>
 </section>
 
 <!-- Contact Us -->
@@ -66,6 +66,4 @@
 
 {% include 'footer.html' %}
 
-</body>
-</html>
-
+{% endblock %}

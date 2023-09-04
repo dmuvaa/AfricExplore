@@ -10,13 +10,12 @@ def create_app():
     Here it's set to use a SQLite database named "site.db
     """
     app = Flask(__name__)
-    app.config['SECRET_KEY'] = 'my_secret_key_here'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+    app.config.from_pyfile('../config.py') 
 
     """Initialize and bind the database instance (db)
     to this Flask application instance
     """
-    db.init_app(app)
+    #db.init_app(app)
 
     """
     Importing the "auth" blueprint from the routes module
