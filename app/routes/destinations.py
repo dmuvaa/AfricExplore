@@ -18,8 +18,8 @@ headers = {
 }
 querystring = {
     "offset": "0",
-    "arrival_date": "2023-09-20",
-    "departure_date": "2023-09-23",
+    "arrival_date": "2023-09-24",
+    "departure_date": "2023-09-26",
     "guest_qty": "1",
     "dest_ids": "-2258110",
     "room_qty": "1",
