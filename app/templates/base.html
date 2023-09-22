@@ -16,9 +16,13 @@
     {% endblock %}
 
     <!-- Optional: Scripts section to include JavaScript files -->
+    //... your other content ...
+
     {% block scripts %}
-    <!-- Default scripts; you can override this section in other templates if needed -->
+        <!-- Default scripts; you can override this section in other templates if needed -->
+        <script src="{{ url_for('static', filename='js/dest.js') }}"></script>
     {% endblock %}
+    
 
 </body>
 

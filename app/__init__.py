@@ -11,6 +11,7 @@ def create_app():
     """
     app = Flask(__name__)
     app.config.from_pyfile('../config.py') 
+    app.config['WTF_CSRF_ENABLED'] = False
 
     """Initialize and bind the database instance (db)
     to this Flask application instance

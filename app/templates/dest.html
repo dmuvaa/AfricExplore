@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% include 'header.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels Listing</title>
+    
+    <style>
+        /* Add some basic styling to make it visually appealing */
+        div.hotel {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: rgb(109, 224, 14);
+        }
+
+        h1 {
+            color: #aa0d0d;
+        }
+
+        img.hotel-image {
+            max-width: 200px; /* you can adjust this */
+        }
+
+        section.booking-form {
+            background-color: blue;
+            margin-left: 40;
+        }
+    </style>
+</head>
+
+<!-- Booking Form -->
+
+<section id="booking-form">
+    <h1>Book Your Stay</h1>
+    <form method="post" class="booking-form">
+        {{ form.hidden_tag() }}
+
+        <div class="form-group">
+            {{ form.city.label }}
+            {{ form.city(class="form-control") }}
+        </div>
+        
+        <div class="form-group">
+            {{ form.start_date.label }}
+            {{ form.start_date(class="form-control") }}
+        </div>
+        
+        <div class="form-group">
+            {{ form.end_date.label }}
+            {{ form.end_date(class="form-control") }}
+        </div>
+        
+        <div class="form-group">
+            {{ form.guests.label }}
+            {{ form.guests(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.children.label }}
+            {{ form.children(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.submit(class="btn btn-primary") }}
+        </div>
+    </form>
+</section>
+
+
+<body>
+
+{% for element in result %}
+    <div class="hotel">
+        <h1>{{ element["hotel_name"] }}</h1>
+        <img src="{{ element['main_photo_url'] }}" alt="{{ element['hotel_name'] }}" class="hotel-image">
+        
+        <!-- Assuming hotel_facilities is a comma-separated string of facility IDs; 
+             You might need another way to display actual facility names if they're not directly provided -->
+        <h3>Facilities & Features:</h3>
+        <p>{{ element["hotel_facilities"] }}</p> 
+        
+        <h3>Reviews:</h3>
+        <p>Review Score: {{ element["review_score"] }} ({{ element["review_score_word"] }})</p>
+        <p>Number of Reviews: {{ element["review_nr"] }}</p>
+
+        <!-- Display other details as required -->
+        <h3>Other Details:</h3>
+        <p>Price: {{ element["min_total_price"] }} {{ element["currencycode"] }}</p>
+        <p>Check-in: {{ element["checkin"]["from"] }}</p>
+        <p>Check-out: {{ element["checkout"]["until"] }}</p>
+    </div>
+{% endfor %}
+
+</body>
+</html>
+{% include 'footer.html' %}
+
+{% endblock %}

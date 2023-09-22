@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
 from flask_wtf import FlaskForm
-from wtforms import StringField, DateField, IntegerField, SubmitField, validators
-from wtforms.validators import ValidationError
+from wtforms import StringField, DateField, IntegerField, SubmitField, TextAreaField, validators
+from wtforms.validators import ValidationError, DataRequired, Email
 from datetime import date
 
 
@@ -16,8 +16,8 @@ class BookingForm(FlaskForm):
 
     end_date = DateField('End Date', format='%Y-%m-%d', validators=[validators.DataRequired()])
     
-    guests = IntegerField('Number of Guests', validators=[validators.NumberRange(min=1, message='Number of guests should be at least 1.')])
-    children = IntegerField('Number of Children Under 13', validators=[validators.NumberRange(min=1, message='Number of children should be at least 1.')])
+    guests = IntegerField('Number of Guests', validators=[validators.NumberRange(min=1, max=8, message='Number of guests should be at least 1.')])
+    children = IntegerField('Number of Children Under 13', validators=[validators.NumberRange(min=0, max=8, message='Number of children should be at least 1.')])
     
     submit = SubmitField('Search')
 
@@ -30,3 +30,9 @@ class BookingForm(FlaskForm):
             raise ValidationError('End Date cannot be in the past.')
         if form.start_date.data and field.data < form.start_date.data:
             raise ValidationError('End Date cannot be before the Start Date.')
+
+class ContactForm(FlaskForm):
+    name = StringField('Name', validators=[DataRequired()])
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    message = TextAreaField('Message', validators=[DataRequired()])
+    submit = SubmitField('Submit')

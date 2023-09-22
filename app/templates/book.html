@@ -1,20 +1,63 @@
-<form method="post">
-    {{ form.hidden_tag() }}
-    {{ form.city.label }} {{ form.city() }}
-    {{ form.start_date.label }} {{ form.start_date() }}
-    {{ form.end_date.label }} {{ form.end_date() }}
-    {{ form.guests.label }} {{ form.guests() }}
-    {{ form.children.label }} {{ form.children() }}
-    {{ form.submit() }}
-</form>
+{% extends "base.html" %}
 
-{% if listings %}
-<ul>
-    {% for listing in listings %}
-    <li>
-        {{ listing.name }} - {{ listing.price }}
-        <button>Book Now</button>
-    </li>
-    {% endfor %}
-</ul>
-{% endif %}
+{% block content %}
+
+{% include 'header.html' %}
+
+<!-- Booking Form -->
+<section id="booking-form">
+    <h1>Book Your Stay</h1>
+    <form method="post" class="booking-form">
+        {{ form.hidden_tag() }}
+
+        <div class="form-group">
+            {{ form.city.label }}
+            {{ form.city(class="form-control") }}
+        </div>
+        
+        <div class="form-group">
+            {{ form.start_date.label }}
+            {{ form.start_date(class="form-control") }}
+        </div>
+        
+        <div class="form-group">
+            {{ form.end_date.label }}
+            {{ form.end_date(class="form-control") }}
+        </div>
+        
+        <div class="form-group">
+            {{ form.guests.label }}
+            {{ form.guests(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.children.label }}
+            {{ form.children(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.submit(class="btn btn-primary") }}
+        </div>
+    </form>
+</section>
+
+<!-- Listings -->
+<section id="listings">
+    {% if listings %}
+    <h2>Available Properties</h2>
+    <ul>
+        {% for listing in listings %}
+        <li class="listing-item">
+            {{ listing.name }} - {{ listing.price }}
+            <button class="btn btn-success">Book Now</button>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <h2>No listings found for the selected criteria.</h2>
+    {% endif %}
+</section>
+
+{% include 'footer.html' %}
+
+{% endblock %}

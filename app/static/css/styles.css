@@ -2,7 +2,13 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #39aebf8a;
+    background-color: #5ac0b0;
+}
+
+/* h1,h2 style */
+h1, h2 {
+    margin: auto;
+    padding: 20px 10px;
 }
 
 header {
@@ -44,7 +50,7 @@ nav a:hover {
     justify-content: space-between;
     padding: 20px;
     gap: 20px;
-    background-color: #93F059;
+    background-color: #39a798;
 }
 
 .destination-card {
@@ -111,4 +117,89 @@ footer {
     padding: 20px 0;
     text-align: center;
     position: relative;
+}
+
+/* app/static/css/styles.css */
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.btn {
+    background-color: #114275;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.contact-us {
+    background-color: #93F059;
+}
+
+/*paragraph syling*/
+p {
+    margin: auto;
+    padding: 20px 10px;
+}
+
+.book_hotel {
+    background-color: #348657;
+}
+
+.intro {
+    background-color: #29d587
+}
+
+.dest_africa {
+    border: solid 2px gray;
+    display: grid;
+    font-size: 15px;
+    overflow-wrap: break-word;
+    width: 450px;
+    padding: 15px;
+    height: 75%;
+    text-overflow: ellipsis;
+}
+
+.contact_info {
+    background-color: #2da13c
+}
+
+.afric_dest {
+    background-image: url('savannah.jpg');
+}
+.destGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    grid-auto-rows: auto;
+    grid-gap: 1rem;
+}
+
+.destContent {
+    height: 600px;
+    width: 1500px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    display: grid;
+    color: black;
 }

@@ -7,6 +7,23 @@
 <!-- Best Destinations in Africa -->
 <section>
   <h1>Best Destinations in Africa</h1>
+  <div class_id="tour_dest">
+    <div class="intro">
+      <h2>🌍 Discover the Unparalleled Beauty of Africa 🌍</h2>
+      <p>Africa is not just a destination; it's an experience that will etch unforgettable memories into your heart. From the vast golden savannas teeming with wildlife to the stunning turquoise beaches caressed by the Indian and Atlantic Oceans, Africa promises an array of scenic wonders.</p>
+    </div>
+    
+    <div class="intro">
+      <h2>🦁 Experience World-Class Safaris</h2>
+      <p>Venture into the heart of the wild. See the majestic lion prancing in its natural habitat, witness the Great Migration – an unmatched spectacle of millions of wildebeests and zebras crossing the Serengeti, or find solace in the silence of the vast desert landscapes.</p>
+    </div>
+    
+    <div class="intro">
+      <h2>🏖 Relax at Pristine Beaches</h2>
+      <p>Beyond the safaris, Africa boasts of some of the world's most beautiful beaches. From the Seychelles to Zanzibar, every coastline is a serene escapade waiting to be discovered.</p>
+    </div>
+    
+  </div>
   <div class="destination-grid">
     {% for destination in destinations[:3] %}
       <article class="destination-card">
@@ -21,7 +38,37 @@
 
 <!-- Dropdown for Locations -->
 <section>
-  <h1>Find Your Destination</h1>
+      <h1>Find Your Destination</h1>
+      <div class="destGrid">
+        <div class_id="afric_dest" class="destContent">
+          <div class="dest_africa">
+            <h2>Embark on a Journey of Discovery 🧭</h2>
+            <p>Africa is not just a place; it's a feeling, an adventure waiting to be had. Whether you're drawn to the rhythm of tribal drums, the thrill of spotting the Big Five in the wild, or the peace of pristine beaches, there's a corner of this vast continent calling out to you.</p>
+          </div>
+          
+          <div class="dest_africa">
+            <h2>Mountains or Meadows? 🏞️</h2>
+            <p>From the rugged terrains of the Atlas Mountains to the rolling plains of the Maasai Mara, every landscape tells a tale of time and beauty.</p>
+          </div>
+
+          <div class="dest_africa">
+            <h2>Beaches or Bustling Cities? 🏖️🌆</h2>
+            <p>Dive into the blue waters of Zanzibar or immerse yourself in the vibrant city life of Cape Town. Your perfect getaway is just a click away.</p>
+          </div>
+
+          <div class="dest_africa">
+            <h2>History or Horizon? 🏰🌅</h2>
+            <p>Be it the ancient pyramids of Egypt or the endless horizons of the Namib Desert, find destinations that resonate with your soul.</p>
+          </div>
+          
+          <div class="dest_africa">
+            <h2>Begin your exploration with us 🧳</h2>
+            <p>Use our intuitive search and curated lists to pinpoint your next travel destination in Africa. Whether you already have a place in mind or are seeking inspiration, we'll guide you to your perfect African retreat.</p>
+          </div>
+        
+      </div>
+  </div>
+
   <select>
     {% for destination in destinations %}
       <option value="{{ destination.name }}">{{ destination.name }}</option>
@@ -29,39 +76,36 @@
   </select>
 </section>
 
-<!-- Best Activities to Keep You Engaged -->
-<section id="activities">
-  <h1>Best Activities to Keep You Engaged</h1>
-  <!-- You can add content or structure similar to the destinations section here -->
-</section>
-
 <!-- Book Your Stay -->
 <section id="book-your-stay">
   <h1>Book Your Stay</h1>
-  <form method="post">
-    {{ form.hidden_tag() }}
-    <div>
-      {{ form.city.label }} {{ form.city() }}
+  <div>
+    <div class="book_hotel">
+      <h2>🏠 Top Accommodations Just a Click Away 🏠</h2>
+      <p>Your comfort is our priority. That's why we've meticulously curated a list of the best places to stay across the continent. Whether you're looking for a luxurious hotel suite overlooking the city skyline, a rustic Airbnb nestled in the wilderness, or a coastal retreat right on the beach, we have it all.</p>
+      <p>Quality Assured: Our listings are reviewed and rated to ensure you have a seamless and delightful stay.</p>
+      <p>Diverse Options: From budget-friendly accommodations to five-star luxury resorts, choose what best suits your style and pocket.</p>
     </div>
-    <div>
-      {{ form.start_date.label }} {{ form.start_date() }}
+    
+    <div class="book_hotel">
+      <h2>Rest, Relax, and Revel in Luxury</h2>
+      <p>After a day spent exploring the wonders of Africa, you deserve a place to rest, rejuvenate, and relish the memories you've made. We bring you an exclusive selection of the continent's top accommodation facilities. Whether you prefer the opulence of a five-star hotel, the rustic charm of a coastal resort, or the homely comforts of a modern Airbnb, we've got you covered.</p>
+      <p>Every listing is handpicked to ensure you enjoy not just comfort, but an experience that's uniquely African. Let the calls of the wild lull you to sleep, or wake up to panoramic views that stretch beyond the horizon. We make sure you're not just visiting Africa – you're living it.</p>
     </div>
-    <div>
-      {{ form.end_date.label }} {{ form.end_date() }}
-    </div>
-    <div>
-      {{ form.guests.label }} {{ form.guests() }}
-    </div>
-    <div>
-      {{ form.submit() }}
-    </div>
-  </form>
+  </div>
+  <a href="{{ url_for('destinations.book') }}" class="view-more">Book Now</a>
 </section>
 
 <!-- Contact Us -->
 <section id="contact-us">
   <h1>Contact Us</h1>
-  <!-- Your contact information or form here -->
+  <div class="contact_info">
+    <h2>💌 Planning an African Adventure? We're Here to Help! 💌</h2>
+    <p>Africa is vast and diverse, and planning a trip can sometimes be overwhelming. But fret not! Our team of experienced travel experts is just a message away.</p>
+    <p>From personalized travel advice to must-know tips for your journey, we're your compass in the vast landscape of Africa. Connect with us and let's chart your path to an unforgettable African adventure.</p>
+    <p>Questions? Need a guide to navigate this majestic continent? Or perhaps a recommendation tailored to your tastes? Reach out to us! Our team of seasoned travelers and local experts is here to help you every step of the way.</p>
+  </div>
+  <a href="{{ url_for('destinations.contact') }}" class="view-more">Contact Us</a>
 </section>
 
 {% include 'footer.html' %}
